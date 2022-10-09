@@ -10,8 +10,12 @@ def home():
 
 @app.route('/home', methods =["GET","POST"])
 def geocodeapi():
-        f = open("Key.txt", 'r')
-        api_key = f.readline()
+    
+       # Reading key from key.txt file, Sign-up to get your own at google cloud 
+       # https://mapsplatform.google.com/ ---> visit here to get your Api key 
+    
+        f = open("Key.txt", 'r')  
+        api_key = f.readline()    
         api_client = googlemaps.Client(api_key)
 
         if request.method == "POST":
