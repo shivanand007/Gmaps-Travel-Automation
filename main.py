@@ -20,11 +20,9 @@ def geocodeapi():
 
         if request.method == "POST":
                 address = request.form.get("origin")
-                #address = "state bank of india, wadegaon, akola, 444502"
                 print(address)
                 type(address)
-                response = api_client.geocode("akola")
-                return response
+                response = api_client.geocode(address)
                 return response[0]["address_components"][0]["long_name"]
 
         else:
